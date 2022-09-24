@@ -4,6 +4,15 @@
     font-family: sans-serif;
 }
 
+h1 {
+    text-align: center;
+    margin: 3rem;
+}
+
+body {
+    background-color: rgb(66, 30, 30);
+}
+
 .container {
     padding: 0;
     margin: auto;
