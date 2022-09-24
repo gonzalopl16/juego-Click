@@ -4,14 +4,19 @@ let Tiempo = document.getElementById('tiempo');
 let Mensaje = document.getElementById('mensaje');
 let Container = document.getElementById('quitar');
 let puntos = 0;
-let tiempo = 60;
+let tiempo = 10;
 let necesarios = 100;
 player.addEventListener('click',sumarPuntos);
 
 
 //Funciones
 function sumarPuntos(){
-    puntos++;
+    if(tiempo === 10){
+        setInterval(restarTiempo,1000);
+    }
+    if(tiempo !== 0){
+        puntos++;
+    }
     punto.innerHTML = `Puntaje: <b> ${puntos} / ${necesarios}</b>`;
     let numeroRandom = Math.round(Math.random()*450);
     let numeroRandom2 = Math.round(Math.random()*450);
@@ -19,16 +24,17 @@ function sumarPuntos(){
     player.style.marginLeft= `${numeroRandom2}px`;
     if(puntos === necesarios){
         mostrar('Ganaste');
-        document.getElementById('quitar').removeChild(this);
+        tiempo = null;
     }
 }
 
 function restarTiempo(){
-    tiempo--;
+    if(tiempo !== 0){
+        tiempo--;
+    }
     Tiempo.innerHTML = `&nbsp;&nbsp Tiempo: ${tiempo}`
     if(tiempo === 0){
         mostrar('perdiste');
-        document.getElementById('quitar').removeChild(this);
     }
 }
 
@@ -40,8 +46,3 @@ function mostrar(mensaje){
         location.reload();
     });
 }
-
-function delate(){
-}
-
-setInterval(restarTiempo,1000);
