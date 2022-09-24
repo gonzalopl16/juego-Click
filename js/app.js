@@ -6,7 +6,7 @@ let Container = document.getElementById('quitar');
 let puntos = 0;
 let tiempo = 60;
 let necesarios = 100;
-player.addEventListener('mouseover',sumarPuntos);
+player.addEventListener('click',sumarPuntos);
 
 
 //Funciones
