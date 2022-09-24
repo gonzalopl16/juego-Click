@@ -4,14 +4,14 @@ let Tiempo = document.getElementById('tiempo');
 let Mensaje = document.getElementById('mensaje');
 let Container = document.getElementById('quitar');
 let puntos = 0;
-let tiempo = 10;
+let tiempo = 60;
 let necesarios = 100;
 player.addEventListener('click',sumarPuntos);
 
 
 //Funciones
 function sumarPuntos(){
-    if(tiempo === 10){
+    if(tiempo === 60){
         setInterval(restarTiempo,1000);
     }
     if(tiempo !== 0){
@@ -24,7 +24,7 @@ function sumarPuntos(){
     player.style.marginLeft= `${numeroRandom2}px`;
     if(puntos === necesarios){
         mostrar('Ganaste');
-        tiempo = null;
+
     }
 }
 
